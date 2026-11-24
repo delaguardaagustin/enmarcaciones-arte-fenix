@@ -16,7 +16,8 @@
 .asis-log .asis-dots{color:var(--muted);letter-spacing:.3em}
 .asis-log .me{margin-left:auto;width:fit-content;max-width:88%;text-align:right;font-style:italic;color:var(--asis-ink);border-bottom:1px solid var(--accent);padding-bottom:2px}
 .asis-log .quote{padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--asis-radius,6px);font-size:.92rem;color:var(--text)}
-.asis-opts{display:flex;flex-wrap:wrap;gap:8px;padding:4px 20px 14px}
+.asis-opts{display:flex;flex-wrap:wrap;gap:8px;padding:4px 20px 14px;flex:0 1 auto;min-height:0;overflow-y:auto;scrollbar-width:thin}
+.asis{overflow:hidden}.asis-head,.asis-form{flex:none}
 .asis-opts:empty{display:none}
 .asis-chip{font:inherit;font-size:.92rem;line-height:1.4;min-height:44px;display:inline-flex;align-items:center;padding:9px 15px;background:transparent;color:var(--asis-ink);border:1px solid var(--accent);border-radius:var(--asis-radius,6px);cursor:pointer;text-decoration:none;transition:background .15s ease,color .15s ease}
 .asis-chip:hover{background:color-mix(in srgb,var(--accent) 14%,transparent)}

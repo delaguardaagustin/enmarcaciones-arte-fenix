@@ -89,7 +89,15 @@
   function menu() {
     clearOpts();
     C.servicios.forEach(function (s) { chip(s.n, function () { pickService(s); }); });
-    chip('Tengo una duda', function () { me('Tengo una duda'); say('Cuénteme, escríbala abajo y le respondo. Si es algo que no sé, le dejo el mensaje listo para ' + C.persona + '.'); input.focus(); });
+    chip('Tengo una duda', function () { me('Tengo una duda'); dudas(C.dudaTxt || 'Cuénteme, escríbala abajo y le respondo. Si es algo que no sé, le dejo el mensaje listo para ' + C.persona + '.'); input.focus(); });
+  }
+  // Preguntas frecuentes como botones (las que traen «q» en la config); también se pueden escribir.
+  function dudas(text) {
+    say(text, function () {
+      C.faq.filter(function (f) { return f.q; }).forEach(function (f) {
+        chip(f.q, function () { me(f.q); answer(f, f.q); });
+      });
+    });
   }
   function pickService(s, silent) {
     if (!silent) me(s.n);
@@ -104,7 +112,7 @@
     }
   }
   function askWhen() {
-    say('¿Para cuándo le acomoda?', function () {
+    say(C.cuandoTxt || '¿Para cuándo le acomoda?', function () {
       C.cuando.forEach(function (w) {
         chip(w.t, function () { st.when = w; me(w.t); finish(); });
       });
@@ -138,12 +146,13 @@
     for (j = 0; j < faqs.length; j++) {
       if (new RegExp(faqs[j].kw, 'i').test(t)) { answer(faqs[j], raw); return; }
     }
-    offerHandoff('Eso prefiero que se lo responda ' + C.persona + ' directamente. Le dejo el chat listo con su pregunta, o puede ver los servicios.', raw);
+    offerHandoff(C.noSe || ('Eso prefiero que se lo responda ' + C.persona + ' directamente. Le dejo el chat listo con su pregunta, o puede ver los servicios.'), raw);
   }
   function answer(f, raw) {
     say(f.r, function () {
       chip(C.agendar || 'Quiero agendar', function () { me(C.agendar || 'Quiero agendar'); say('¿Qué servicio busca?', menu); });   // agendar y confirma: textos opcionales por negocio (ej. «Quiero cotizar» en una constructora)
       link(LLAMADA ? 'Llamar ahora' : 'Escribir por WhatsApp', wa('Hola ' + C.persona + ', vi su página web y tengo una consulta: ' + raw));
+      if (C.faq.some(function (x) { return x.q; })) chip('Otra pregunta', function () { me('Otra pregunta'); dudas('¿Qué más quieres saber? Elige una o escríbela abajo.'); });
     });
   }
 
