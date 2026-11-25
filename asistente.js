@@ -30,7 +30,7 @@
     '<div class="asis-log" aria-live="polite"></div>' +
     '<div class="asis-opts"></div>' +
     '<form class="asis-form"><label class="asis-sr" for="asis-in">Escriba su duda</label>' +
-    '<input id="asis-in" type="text" autocomplete="off" maxlength="200" placeholder="O escribe su duda aquí">' +
+    '<input id="asis-in" type="text" autocomplete="off" maxlength="200" placeholder="' + (C.placeholder || 'O escribe su duda aquí') + '">' +
     '<button type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button></form>';
   document.body.appendChild(root);
 
@@ -89,7 +89,9 @@
   function menu() {
     clearOpts();
     C.servicios.forEach(function (s) { chip(s.n, function () { pickService(s); }); });
-    chip('Tengo una duda', function () { me('Tengo una duda'); dudas(C.dudaTxt || 'Cuénteme, escríbala abajo y le respondo. Si es algo que no sé, le dejo el mensaje listo para ' + C.persona + '.'); input.focus(); });
+    // Atajos: preguntas frecuentes visibles desde el inicio (las que traen «menu» en la config).
+    C.faq.filter(function (f) { return f.menu; }).forEach(function (f) { chip(f.menu, function () { me(f.q || f.menu); answer(f, f.q || f.menu); }); });
+    chip(C.dudaBtn || 'Tengo una duda', function () { me('Tengo una duda'); dudas(C.dudaTxt || 'Cuénteme, escríbala abajo y le respondo. Si es algo que no sé, le dejo el mensaje listo para ' + C.persona + '.'); input.focus(); });
   }
   // Preguntas frecuentes como botones (las que traen «q» en la config); también se pueden escribir.
   function dudas(text) {
@@ -104,12 +106,20 @@
     st.svc = s.n; st.det = '';
     if (s.opts && s.opts.length) {
       say(s.info, function () {
-        s.opts.forEach(function (o) { chip(o, function () { st.det = o; me(o); askWhen(); }); });
-        chip('Aún no lo sé', function () { me('Aún no lo sé'); askWhen(); });
+        s.opts.forEach(function (o) { chip(o, function () { st.det = o; me(o); askSize(s); }); });
+        chip('Otra cosa', function () { me('Otra cosa'); askSize(s); });
       });
     } else {
-      say(s.info, askWhen);
+      say(s.info, function () { askSize(s); });
     }
+  }
+  // Tamaño aproximado (opcional, solo si el servicio lo pide con «medida»: true y la config trae «medidas»).
+  function askSize(s) {
+    st.tam = '';
+    if (!(C.medidas && s.medida)) { askWhen(); return; }
+    say(C.medidaTxt || '¿De qué tamaño es, más o menos?', function () {
+      C.medidas.forEach(function (m) { chip(m, function () { st.tam = m; me(m); askWhen(); }); });
+    });
   }
   function askWhen() {
     say(C.cuandoTxt || '¿Para cuándo le acomoda?', function () {
@@ -121,9 +131,10 @@
   function finish() {
     var que = st.det ? st.det.toLowerCase() + ' (' + st.svc.toLowerCase() + ')' : st.svc.toLowerCase();
     var cuando = st.when.m;
-    var msg = 'Hola ' + C.persona + ', vi su página web y me gustaría agendar: ' + que + '. ' + cuando;
+    var msg = 'Hola ' + C.persona + ', vi su página web y me gustaría ' + (C.verbo || 'agendar') + ': ' + que + '.' + (st.tam ? ' Tamaño aproximado: ' + st.tam.toLowerCase() + '.' : '') + ' ' + cuando;
     say(LLAMADA ? 'Listo. Esto le puede decir cuando llames:' : ('Listo. Este es el mensaje que le llegaría a ' + C.persona + ':'), function () {
       var q = line('quote', msg);
+      if (C.cierre) line('a', C.cierre);
       link(LLAMADA ? 'Llamar ahora' : 'Enviar por WhatsApp', wa(msg));
       chip('Empezar de nuevo', function () { me('Empezar de nuevo'); start(); });
       q.scrollIntoView({ block: 'nearest' });
