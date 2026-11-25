@@ -113,7 +113,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.005em}h1{font-size:clamp(2.8rem,6vw,4.
 .gal figure{border:10px solid #fff;box-shadow:0 0 0 1px var(--linea),0 18px 30px -24px rgba(0,0,0,.45)}.gal img{aspect-ratio:4/5}
 .gal figcaption{background:transparent;color:var(--suave);position:static;padding:8px 0 0;font-style:italic;font-family:var(--ft);font-size:1rem}
 .serv{border:1px solid var(--linea)}.serv .ic-serv{background:transparent;border:1px solid var(--c2);color:#9a6a1d}
-.moldura{height:22px;background:linear-gradient(180deg,#e5cf9c,#b8924a 45%,#7d5f26 55%,#d9b26a)}</style>
+.moldura{height:22px;background:linear-gradient(180deg,#e5cf9c,#b8924a 45%,#7d5f26 55%,#d9b26a)}.car{position:relative}.car-pista{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:2px;padding:6px 2px 26px;scrollbar-width:none;overscroll-behavior-x:contain}.car-pista::-webkit-scrollbar{display:none}.car-pista:focus-visible{outline:2px solid var(--c1);outline-offset:4px}.car-it{flex:0 0 clamp(230px,27vw,320px);margin:0;scroll-snap-align:start;background:#fff;padding:12px 12px 0;border:1px solid var(--linea);box-shadow:0 22px 34px -26px rgba(42,29,31,.55)}.car-it img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--c3)}.car-it figcaption{font:italic 500 1.08rem/1.3 var(--ft);color:var(--tinta);padding:12px 2px 14px}.car-nav{display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:6px}.car-n{font:600 1rem/1 var(--ft);color:var(--suave);min-width:5ch;text-align:center}.car-n b{color:var(--tinta);font-size:1.25rem}.car-b{width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--tinta);background:transparent;color:var(--tinta);cursor:pointer;transition:background .15s,color .15s}.car-b:hover:not(:disabled){background:var(--tinta);color:#fff}.car-b:disabled{opacity:.3;cursor:default}.car-b svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.taller{background:var(--oscuro);color:#efe6dc}.taller h2{color:#fff}.taller h2 em{color:var(--c2)}.taller .eti{color:var(--c2)}.taller .cab p{color:#cbbfb3}.taller .cab a{color:var(--c2)}.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.vid{margin:0;background:#fff;padding:10px;box-shadow:0 30px 50px -30px rgba(0,0,0,.8)}.vid video{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#1b1314}@media (max-width:760px){.vids{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:10px;scrollbar-width:none}.vids::-webkit-scrollbar{display:none}.vid{flex:0 0 68vw;scroll-snap-align:start}.car-it{flex-basis:76vw}.car-nav{justify-content:center}}</style>
 </head>
 <body>
 
@@ -128,12 +128,12 @@ h1,h2,h3{font-weight:600;letter-spacing:-.005em}h1{font-size:clamp(2.8rem,6vw,4.
 
 <header><div class="wrap nav">
   <a class="marca" href="#inicio"><span class="sello"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1"/><rect x="7" y="7" width="10" height="10"/><path d="M7 14l3-3 2.5 2.5L14 12l3 3"/></svg></span><span><b>Arte Fénix</b><small>Enmarcaciones · Las Condes</small></span></a>
-  <nav class="menu" aria-label="Secciones"><a href="#servicios">Servicios</a><a href="#trabajos">Trabajos</a><a href="#opiniones">Opiniones</a><a href="#contacto">Contacto</a></nav>
+  <nav class="menu" aria-label="Secciones"><a href="#servicios">Servicios</a><a href="#trabajos">Trabajos</a><a href="#taller">Videos</a><a href="#opiniones">Opiniones</a><a href="#contacto">Contacto</a></nav>
   <a class="btn btn-p" href="#contacto">Cotizar</a>
 </div></header>
 <main id="inicio">
 <section class="portada lado"><div class="wrap">
-    <div class="reveal"><span class="eti">Enmarcaciones en Las Condes</span><h1>Enmarca <em>lo que importa</em></h1><p class="baja">Gran variedad de molduras para enmarcar cuadros, láminas, diplomas y recuerdos. Restauración de marcos, venta de obras, bastidores y pinceles. Asesoría para elegir el marco.</p>
+    <div class="reveal"><span class="eti">Enmarcaciones en Las Condes</span><h1>Enmarca <em>la vida</em></h1><p class="baja">Gran variedad de molduras para enmarcar cuadros, láminas, diplomas y recuerdos. Restauración de marcos, venta de obras, bastidores y pinceles. Asesoría para elegir el marco.</p>
       <div class="acciones"><a class="btn btn-wa" href="https://wa.me/56995461019?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quiero%20cotizar%20un%20marco" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.6 8.6 0 1 1 8 19.4z"/><path d="M9 8.6c.2 2.9 2.6 5.4 5.6 5.8l1-1.1 1.9.8-.4 1.8c-4.6.4-8.8-3.6-8.5-8.3l1.8-.4.8 1.9z"/></svg>Cotizar un marco</a><a class="btn btn-o" href="tel:+56995461019"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.6l1.6 4.4-2.2 1.4a11 11 0 0 0 6.2 6.2l1.4-2.2 4.4 1.6V18.5A2 2 0 0 1 18 20.5 15.5 15.5 0 0 1 3.5 6 2 2 0 0 1 5 3.5z"/></svg>Llamar</a></div><ul class="chips"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>4,8 en Google</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19.5c.6-3.3 2.8-5 5.5-5s4.9 1.7 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.6c2.4-.3 4.4 1.2 5 4"/></svg>20 opiniones</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1"/><rect x="7" y="7" width="10" height="10"/><path d="M7 14l3-3 2.5 2.5L14 12l3 3"/></svg>Molduras a elección</li></ul></div>
     <div class="foto-p reveal"><img src="assets/hero.jpg" alt="Lámina enmarcada con passe-partout crema y marco dorado tallado"></div></div></section>
 <div class="moldura" aria-hidden="true"></div>
@@ -157,8 +157,16 @@ h1,h2,h3{font-weight:600;letter-spacing:-.005em}h1{font-size:clamp(2.8rem,6vw,4.
 </div></section>
 
 <section id="trabajos"><div class="wrap">
-  <div class="cab reveal"><div><span class="eti">Trabajos</span><h2>Algunos <em>trabajos</em></h2></div><p>Fotos publicadas en nuestra ficha de Google.</p></div>
-  <div class="gal"><figure class="reveal"><img src="assets/g1.jpg" alt="Óleo de un mar con marco dorado y passe-partout lino" loading="lazy"><figcaption>Óleo marino</figcaption></figure><figure class="reveal"><img src="assets/g2.jpg" alt="Pintura de caballos con marco dorado delgado" loading="lazy"><figcaption>Caballos</figcaption></figure><figure class="reveal"><img src="assets/g3.jpg" alt="Mapa antiguo del mundo enmarcado en madera" loading="lazy"><figcaption>Mapa antiguo</figcaption></figure><figure class="reveal"><img src="assets/g4.jpg" alt="Ramo de flores prensadas en caja negra con passe-partout blanco" loading="lazy"><figcaption>Flores prensadas</figcaption></figure><figure class="reveal"><img src="assets/g5.jpg" alt="Esquina de una moldura dorada envejecida" loading="lazy"><figcaption>Detalle de moldura</figcaption></figure><figure class="reveal"><img src="assets/g6.jpg" alt="Obra en marco tipo caja de madera clara" loading="lazy"><figcaption>Marco caja</figcaption></figure></div>
+  <div class="cab reveal"><div><span class="eti">Trabajos</span><h2>Algunos <em>trabajos</em></h2></div><p>Desliza para ver más. Fotos de nuestro local y de nuestra ficha de Google.</p></div>
+  <div class="car reveal" data-car>
+    <div class="car-pista" tabindex="0" aria-label="Fotos de trabajos (desliza para ver más)"><figure class="car-it"><img src="assets/g1.jpg" alt="Óleo de un mar con marco dorado y passe-partout lino" loading="lazy" decoding="async"><figcaption>Óleo marino</figcaption></figure><figure class="car-it"><img src="assets/g2.jpg" alt="Pintura de caballos con marco dorado delgado" loading="lazy" decoding="async"><figcaption>Caballos</figcaption></figure><figure class="car-it"><img src="assets/g3.jpg" alt="Mapa antiguo del mundo enmarcado en madera" loading="lazy" decoding="async"><figcaption>Mapa antiguo</figcaption></figure><figure class="car-it"><img src="assets/g4.jpg" alt="Ramo de flores prensadas en caja negra con passe-partout blanco" loading="lazy" decoding="async"><figcaption>Flores prensadas</figcaption></figure><figure class="car-it"><img src="assets/g7.jpg" alt="Colección de pequeñas estampas enmarcadas juntas bajo vidrio" loading="lazy" decoding="async"><figcaption>Colección de estampas</figcaption></figure><figure class="car-it"><img src="assets/g8.jpg" alt="Colección de cartas ordenadas en un marco negro" loading="lazy" decoding="async"><figcaption>Colección de cartas</figcaption></figure><figure class="car-it"><img src="assets/g9.jpg" alt="Lámina de una ciudad de noche con marco blanco" loading="lazy" decoding="async"><figcaption>Lámina en marco blanco</figcaption></figure><figure class="car-it"><img src="assets/g10.jpg" alt="Pintura abstracta de colores con marco dorado delgado" loading="lazy" decoding="async"><figcaption>Abstracto en dorado</figcaption></figure><figure class="car-it"><img src="assets/g6.jpg" alt="Obra en marco tipo caja de madera clara" loading="lazy" decoding="async"><figcaption>Marco caja</figcaption></figure><figure class="car-it"><img src="assets/g5.jpg" alt="Esquina de una moldura dorada envejecida" loading="lazy" decoding="async"><figcaption>Detalle de moldura</figcaption></figure></div>
+    <div class="car-nav"><button type="button" class="car-b" data-dir="-1" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><span class="car-n" aria-live="polite"><b>1</b> / 10</span><button type="button" class="car-b" data-dir="1" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+  </div>
+</div></section>
+
+<section id="taller" class="taller"><div class="wrap">
+  <div class="cab reveal"><div><span class="eti">En el taller</span><h2>Así <em>quedan</em></h2></div><p>Videos de nuestro Instagram. Más trabajos en <a href="https://www.instagram.com/enmarcacionesartefenix/" target="_blank" rel="noopener">@enmarcacionesartefenix</a>.</p></div>
+  <div class="vids"><figure class="vid reveal"><video src="assets/v1.mp4" poster="assets/v1.jpg" muted loop playsinline preload="none" aria-label="Video: láminas y obras enmarcadas en el local"></video></figure><figure class="vid reveal"><video src="assets/v2.mp4" poster="assets/v2.jpg" muted loop playsinline preload="none" aria-label="Video: grabados enmarcados con passe-partout y moldura plateada"></video></figure><figure class="vid reveal"><video src="assets/v3.mp4" poster="assets/v3.jpg" muted loop playsinline preload="none" aria-label="Video: molduras plateadas y negras para fotos y láminas"></video></figure></div>
 </div></section>
 
 <section id="opiniones" class="opis"><div class="wrap">
@@ -221,6 +229,25 @@ document.querySelectorAll('form[data-cot]').forEach(function(f){f.addEventListen
     if(g('fMsg'))m+=' '+g('fMsg');
     window.open('https://wa.me/'+f.getAttribute('data-wa')+'?text='+encodeURIComponent(m),'_blank','noopener');
   });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('[data-car]').forEach(function(c){
+    var pista=c.querySelector('.car-pista'),its=pista.children,n=c.querySelector('.car-n b'),bs=c.querySelectorAll('.car-b');
+    function paso(){return its.length>1?its[1].offsetLeft-its[0].offsetLeft:pista.clientWidth}
+    function act(){var i=Math.round(pista.scrollLeft/paso());var fin=pista.scrollLeft+pista.clientWidth>=pista.scrollWidth-4;
+      if(fin)i=its.length-1;n.textContent=Math.min(its.length,i+1);bs[0].disabled=pista.scrollLeft<4;bs[1].disabled=fin}
+    bs.forEach(function(b){b.addEventListener('click',function(){pista.scrollBy({left:paso()*+b.dataset.dir,behavior:'smooth'})})});
+    pista.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();pista.scrollBy({left:paso()*(e.key==='ArrowRight'?1:-1),behavior:'smooth'})}});
+    pista.addEventListener('scroll',function(){window.requestAnimationFrame(act)},{passive:true});act();
+  });
+  var quieto=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vs=document.querySelectorAll('.vid video');
+  if(quieto||!('IntersectionObserver' in window)){vs.forEach(function(v){v.controls=true});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){v.controls=true})}else v.pause()})},{threshold:.35});
+  vs.forEach(function(v){io.observe(v)});
 })();
 </script>
 <link rel="stylesheet" href="asistente.css?v=2">
