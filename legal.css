@@ -1,0 +1,19 @@
+*{box-sizing:border-box}
+body{margin:0;font:400 17px/1.7 'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;color:#22191a;background:#fdfbf7}
+a{color:#7a2a35}
+.top{background:#2a1d1f;color:#fff;border-bottom:4px solid #d9b26a}
+.w{width:min(820px,100% - 32px);margin:0 auto}
+.top .w{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:74px}
+.marca{color:#fff;text-decoration:none;line-height:1.1}
+.marca b{display:block;font:600 1.6rem/1 'Cormorant Garamond',Georgia,serif}
+.marca small{color:#d9b26a;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.volver{color:#fff;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 16px}
+main{padding:46px 0 72px}
+h1{font:600 clamp(2.2rem,6vw,3.2rem)/1.05 'Cormorant Garamond',Georgia,serif;margin:0 0 8px;color:#7a2a35;text-wrap:balance}
+.fecha{color:#6b5f5a;margin:0 0 26px}
+h2{font:600 1.6rem/1.15 'Cormorant Garamond',Georgia,serif;margin:34px 0 6px;color:#2a1d1f}
+ul{padding-left:1.2em}li{margin:4px 0}
+.caja{background:#f6f1e8;border:1px solid #e8dfd0;border-left:4px solid #d9b26a;border-radius:12px;padding:16px 18px;margin:18px 0}
+mark{background:#fff3b0;color:#5a4300;padding:1px 4px;border-radius:4px}
+footer{background:#2a1d1f;color:rgba(255,255,255,.75);padding:24px 0;font-size:.9rem}
+footer a{color:#fff}
